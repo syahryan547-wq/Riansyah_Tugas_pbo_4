@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Nomor6 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Apakah memiliki kartu member? (ya/tidak): ");
+        String member = input.nextLine();
+
+        System.out.print("Masukkan total belanja: Rp");
+        double total = input.nextDouble();
+
+        double diskon = 0;
+        if (member.equalsIgnoreCase("ya")) {
+            if (total > 500000) {
+                diskon = 50000;
+            } else if (total > 100000) {
+                diskon = 15000;
+            }
+        } else {
+            if (total > 100000) {
+                diskon = 10000;
+            }
+        }
+
+        double bayar = total - diskon;
+        System.out.print("Masukkan uang dibayar: Rp");
+        double uang = input.nextDouble();
+
+        double kembalian = uang - bayar;
+
+        System.out.println("\n=== Struk Pembayaran ===");
+        System.out.println("Total Belanja: Rp" + total);
+        System.out.println("Diskon: Rp" + diskon);
+        System.out.println("Total Bayar: Rp" + bayar);
+        System.out.println("Uang Diterima: Rp" + uang);
+        System.out.println("Kembalian: Rp" + kembalian);
+    }
+}
